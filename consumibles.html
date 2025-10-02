@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consumibles | Ozonix Purificación</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="description" content="Catálogo de consumibles: carcazas, filtros y cloradores. Descarga la lista de precios en PDF.">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Ozonix Purificación</span></a>
+  <nav class="nav">
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a class="btn btn--sm" href="contacto.html">Contacto</a>
+  </nav>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <h1>Consumibles</h1>
+    <p class="lead">Carcazas, filtros y cloradores. <a class="btn btn--outline btn--sm" href="assets/Lista-de-precios.pdf" download>Descargar lista de precios (PDF)</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="filters">
+      <input id="q" placeholder="Buscar por nombre, modelo, marca…" oninput="filtrarConsumibles()">
+      <select id="cat" onchange="filtrarConsumibles()">
+        <option value="">Todas las categorías</option>
+        <option>Carcaza</option>
+        <option>Filtro</option>
+        <option>Clorador</option>
+      </select>
+      <select id="micraje" onchange="filtrarConsumibles()">
+        <option value="">Micraje</option>
+        <option>1</option><option>5</option><option>10</option><option>20</option>
+      </select>
+      <select id="marca" onchange="filtrarConsumibles()">
+        <option value="">Marca</option>
+        <option>AquaPro</option><option>Hydronix</option><option>Pentair</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="tablaConsumibles" class="table">
+        <thead>
+          <tr>
+            <th>Categoría</th><th>Producto</th><th>Modelo</th><th>Micras</th><th>Material</th><th>Caudal</th><th>Marca</th><th>Stock</th>
+          </tr>
+        </thead>
+        <tbody><!-- poblado por JS --></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><strong>Ozonix Purificación</strong></div>
+    <div><a href="servicios.html">Servicios</a></div>
+    <div><a href="contacto.html">Contacto</a></div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ozonix Purificación</p>
+</footer>
+<a class="fab-whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener">💬</a>
+
+<script src="assets/script.js"></script>
+<script>
+  cargarConsumibles('data/consumibles.json');
+</script>
+</body>
+</html>

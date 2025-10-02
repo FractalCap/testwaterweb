@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Ozonix Purificación</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Ozonix Purificación</span></a>
+  <nav class="nav">
+    <a href="servicios.html">Servicios</a>
+    <a href="consumibles.html">Consumibles</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <h1>Contacto</h1>
+    <p class="lead">Leonardo Castaño · Asesoría técnica e instalación</p>
+  </div>
+</section>
+
+<section id="form" class="section">
+  <div class="wrap grid grid-2">
+    <form class="card" onsubmit="return enviarContacto(event)">
+      <h3>Escríbenos</h3>
+      <label>Nombre<input required name="nombre"></label>
+      <label>Email<input required type="email" name="email"></label>
+      <label>Teléfono<input required name="telefono"></label>
+      <label>Ciudad<input required name="ciudad"></label>
+      <label>Sector
+        <select name="sector"><option>Industrial</option><option>Institucional</option></select>
+      </label>
+      <label>Mensaje<textarea name="mensaje" rows="5" placeholder="Cuéntanos tu aplicación…"></textarea></label>
+      <div class="cta-row">
+        <button class="btn btn--primary" type="submit">Enviar</button>
+        <a class="btn btn--outline" target="_blank" rel="noopener" href="https://wa.me/573000000000?text=Hola%20Leonardo%2C%20necesito%20asesor%C3%ADa%20en%20tratamiento%20de%20agua">WhatsApp</a>
+      </div>
+      <p class="muted tiny">Al enviar aceptas nuestra política de tratamiento de datos.</p>
+      <div id="contactoOk" class="alert success" hidden>¡Gracias! Te contactaremos muy pronto.</div>
+    </form>
+
+    <div class="card">
+      <h3>Cobertura</h3>
+      <p>Atendemos <strong>Bogotá</strong>, Medellín, Cali, Barranquilla y Bucaramanga. Otras ciudades bajo cita.</p>
+      <h3 style="margin-top:1.5rem">Plan de mantenimiento</h3>
+      <p>Configura recordatorios de cambio de cartucho/lámpara UV.</p>
+      <form onsubmit="return crearRecordatorioICS(event)">
+        <div class="grid grid-2">
+          <label>Equipo<input required name="equipo" placeholder="Filtro 20” 5 micras"></label>
+          <label>Frecuencia (meses)<input required type="number" min="1" max="24" name="meses" value="6"></label>
+        </div>
+        <button class="btn btn--ghost" type="submit">Crear recordatorio (.ics)</button>
+      </form>
+      <div id="mantResult" class="agenda-result" hidden></div>
+      <h3 style="margin-top:1.5rem">Datos</h3>
+      <p>Email: <a href="mailto:contacto@ozonix.com">contacto@ozonix.com</a><br>Tel: <a href="tel:+573000000000">+57 300 000 0000</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><strong>Ozonix Purificación</strong></div>
+    <div><a href="nosotros.html">Nosotros</a></div>
+    <div><a href="index.html">Inicio</a></div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ozonix Purificación</p>
+</footer>
+<a class="fab-whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener">💬</a>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

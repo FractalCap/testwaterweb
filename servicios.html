@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios y Aplicaciones | Ozonix Purificación</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Ozonix Purificación</span></a>
+  <nav class="nav">
+    <a href="#institucional">Institucional</a>
+    <a href="#industrial">Industrial</a>
+    <a class="btn btn--sm" href="contacto.html">Contacto</a>
+  </nav>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <h1>Servicios y Aplicaciones</h1>
+    <p class="lead">Dividimos por sector para resolver problemas reales con <strong>ozono</strong> y filtración.</p>
+  </div>
+</section>
+
+<section id="institucional" class="section">
+  <div class="wrap">
+    <h2>Institucional</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Bebederos &amp; Dispensadores</h3>
+        <p>Calidad bacteriológica, control de olores y mantenimiento programado.</p>
+        <a class="btn btn--ghost" href="contacto.html#form">Solicitar propuesta</a>
+      </div>
+      <div class="card">
+        <h3>Restaurantes</h3>
+        <p>Lavado de frutas/verduras, hielo y agua de proceso sin sabores indeseados.</p>
+        <a class="btn btn--ghost" href="contacto.html#form">Solicitar visita</a>
+      </div>
+      <div class="card">
+        <h3>Hoteles</h3>
+        <p>Planta integral para cocina, lavandería y spa/piscina con control microbiológico.</p>
+        <a class="btn btn--ghost" href="contacto.html#form">Agendar diagnóstico</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industrial" class="section section--alt">
+  <div class="wrap">
+    <h2>Industrial</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Agua potable / PTAP</h3>
+        <p>Clarificación, filtración, ozonización y pulido final. Datos y trazabilidad.</p>
+      </div>
+      <div class="card">
+        <h3>Agua lluvia</h3>
+        <p>Pretratamiento + desinfección con ozono para usos no potables y reúso.</p>
+      </div>
+      <div class="card">
+        <h3>Agua residual / PTAR</h3>
+        <p>Mejora DQO/DBO, color y olor; apoyo a desinfección sin subproductos persistentes.</p>
+      </div>
+      <div class="card">
+        <h3>Plantas de alimentos</h3>
+        <p>Contactos sanitarios y CIP con ozono; disminuye cloro libre combinado.</p>
+      </div>
+      <div class="card">
+        <h3>Agroindustria</h3>
+        <p>Lavado de canales y frutas; menos químicos, más inocuidad.</p>
+      </div>
+      <div class="card">
+        <h3>Lavandería &amp; Piscinas</h3>
+        <p>Menor detergente y reposición; confort del usuario y ahorro energético.</p>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="#" onclick="openAgenda(event)">Agendar visita técnica</a>
+      <a class="btn btn--outline" href="consumibles.html">Ver consumibles</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><strong>Ozonix Purificación</strong></div>
+    <div><a href="nosotros.html">Nosotros</a><br><a href="consumibles.html">Consumibles</a></div>
+    <div><a href="contacto.html">Contacto</a></div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ozonix Purificación</p>
+</footer>
+<a class="fab-whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener">💬</a>
+
+<div id="agendaModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modal__content">
+    <button class="modal__close" onclick="closeAgenda()">×</button>
+    <h3>Agendar visita técnica</h3>
+    <form id="agendaForm" onsubmit="return crearCitaICS(event)">
+      <div class="grid grid-2">
+        <label>Nombre<input required name="nombre"/></label>
+        <label>Empresa<input name="empresa"/></label>
+        <label>Fecha<input required type="date" name="fecha"/></label>
+        <label>Hora<input required type="time" name="hora"/></label>
+      </div>
+      <label>Ciudad<input required name="ciudad"/></label>
+      <label>Sector
+        <select name="sector"><option>Industrial</option><option>Institucional</option></select>
+      </label>
+      <button class="btn btn--primary" type="submit">Crear cita (.ics)</button>
+    </form>
+    <div id="agendaResult" class="agenda-result" hidden></div>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
