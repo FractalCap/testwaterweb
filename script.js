@@ -8,11 +8,11 @@ function toggleMenu(){
 const yEl = document.getElementById('year');
 if (yEl) yEl.textContent = new Date().getFullYear();
 
-// Agenda modal
+// Agenda modal (se mantiene para Home/Servicios)
 function openAgenda(e){ if(e) e.preventDefault(); document.getElementById('agendaModal').setAttribute('aria-hidden','false'); }
 function closeAgenda(){ document.getElementById('agendaModal').setAttribute('aria-hidden','true'); document.getElementById('agendaResult')?.setAttribute('hidden',''); }
 
-// Crear cita ICS + mensaje WhatsApp
+// Crear cita ICS + mensaje WhatsApp (se usa en Home/Servicios)
 function crearCitaICS(ev){
   ev.preventDefault();
   const f = ev.target;
@@ -56,38 +56,11 @@ function crearCitaICS(ev){
   return false;
 }
 
-// Recordatorio de mantenimiento (.ics recurrente)
-function crearRecordatorioICS(ev){
-  ev.preventDefault();
-  const f = ev.target;
-  const equipo = f.equipo.value.trim();
-  const meses = Math.max(1, parseInt(f.meses.value,10)||6);
-  const start = new Date(); start.setHours(9,0,0,0);
-  function fmt(d){ return d.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z'; }
-  const ics = [
-    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Ozonix//Mant//ES',
-    'BEGIN:VEVENT',
-    `DTSTART:${fmt(start)}`,
-    `RRULE:FREQ=MONTHLY;INTERVAL=${meses}`,
-    `SUMMARY:Recordatorio mantenimiento: ${equipo}`,
-    'DESCRIPTION:Revisar y reemplazar consumible según horas de uso.',
-    'END:VEVENT','END:VCALENDAR'
-  ].join('\r\n');
-
-  const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'Mantenimiento-Ozonix.ics'; a.click();
-
-  const out = document.getElementById('mantResult');
-  if(out){ out.innerHTML = '✅ Recordatorio creado. Importa el archivo a tu calendario.'; out.removeAttribute('hidden'); }
-  return false;
-}
-
 // Contacto (demo local)
 function enviarContacto(ev){
   ev.preventDefault();
-  document.getElementById('contactoOk').removeAttribute('hidden');
-  // Aquí integrarías tu backend / form service (EmailJS, Formspree, etc.)
+  document.getElementById('contactoOk')?.removeAttribute('hidden');
+  // Integrar con tu backend o servicio de formularios si deseas (Formspree, EmailJS, etc.)
   return false;
 }
 
@@ -103,6 +76,7 @@ async function cargarConsumibles(url){
 }
 function renderConsumibles(items){
   const tbody = document.querySelector('#tablaConsumibles tbody');
+  if(!tbody) return;
   tbody.innerHTML = items.map(it => `
     <tr>
       <td>${it.categoria}</td>
@@ -117,10 +91,10 @@ function renderConsumibles(items){
   `).join('');
 }
 function filtrarConsumibles(){
-  const q = document.getElementById('q').value.toLowerCase();
-  const cat = document.getElementById('cat').value;
-  const mic = document.getElementById('micraje').value;
-  const marca = document.getElementById('marca').value;
+  const q = document.getElementById('q')?.value.toLowerCase() || '';
+  const cat = document.getElementById('cat')?.value || '';
+  const mic = document.getElementById('micraje')?.value || '';
+  const marca = document.getElementById('marca')?.value || '';
 
   const out = _consumibles.filter(x => {
     const matchQ = !q || `${x.producto} ${x.modelo} ${x.marca}`.toLowerCase().includes(q);
