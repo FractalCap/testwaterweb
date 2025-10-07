@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OZONO | Tratamiento y Purificación de Agua – Industrial & Institucional</title>
   <meta name="description" content="Purificación de agua con ozono como eje central. Ingeniería, instalación y mantenimiento para sectores Industrial e Institucional. Importador directo.">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
+
   <!-- JSON-LD: LocalBusiness + FAQ -->
   <script type="application/ld+json">
   {
@@ -33,38 +32,216 @@
     ]
   }
   </script>
+
+  <!-- ====== STYLES (embebidos) ====== -->
+  <style>
+  :root{
+    --brand-900:#0B1F3B;
+    --brand-700:#0A6CC2;
+    --brand-500:#19B5FE;
+    --accent-500:#2ECC71;
+    --bg:#F4F8FB;
+    --surface:#ffffff;
+    --text:#1A2634;
+    --muted:#5B6B81;
+    --ring:rgba(10,108,194,.25);
+    --shadow: 0 10px 25px rgba(11,31,59,.12), 0 4px 12px rgba(11,31,59,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    color:var(--text); background:var(--bg); line-height:1.55;
+  }
+  a{color:var(--brand-700); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+
+  /* ===== Header ===== */
+  .site-header{
+    position:sticky; top:0; z-index:50; background:var(--surface);
+    box-shadow: 0 1px 0 rgba(11,31,59,.06);
+  }
+  .header-bar{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:16px; padding:12px 0}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--brand-900)}
+  .brand img{width:44px; height:44px; border-radius:8px}
+  .nav{display:flex; justify-content:center; gap:34px; align-items:center}
+  .nav a{
+    position:relative; color:#1b2433; font-weight:600; letter-spacing:.2px;
+    padding:10px 2px; text-decoration:none;
+  }
+  .nav a::after{
+    content:""; position:absolute; left:0; right:0; bottom:2px; height:2px;
+    background:var(--brand-700); transform:scaleX(0); transform-origin:left; transition:transform .2s ease; border-radius:2px;
+  }
+  .nav a:hover::after{transform:scaleX(1)}
+  .nav a.active::after{transform:scaleX(1)}
+  .header-cta{
+    --bg:#0A4F9C; --fg:#fff; --bd:transparent;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:10px 18px; border-radius:999px; background:var(--bg); color:var(--fg);
+    font-weight:700; box-shadow: 0 8px 20px rgba(10,79,156,.25);
+  }
+  .header-cta:hover{text-decoration:none; transform:translateY(-1px)}
+  .nav-toggle{display:none; font-size:22px; background:none; border:0; cursor:pointer}
+
+  /* ===== HERO full screen ===== */
+  .hero{
+    --hero-bg: radial-gradient(1200px 600px at 20% -10%, rgba(25,181,254,.25), transparent),
+               linear-gradient(180deg, #ffffff, #F4F8FB 65%);
+    background: var(--hero-bg);
+    position:relative;
+    min-height:100vh;              /* full screen */
+    display:flex; align-items:center;
+    padding:0;
+    overflow:clip;
+  }
+  .hero__container{
+    position:relative;
+    width:100%;
+    display:grid; grid-template-columns: 1.2fr 1fr; gap:28px; align-items:center;
+    padding:40px 0 56px;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(10,18,28,.60) 0%, rgba(10,18,28,.50) 42%, rgba(10,18,28,.15) 66%, rgba(10,18,28,0) 80%);
+    pointer-events:none;
+  }
+  .hero__left{position:relative; z-index:1; color:#fff; padding:24px 0}
+  .hero__title{font-weight:800; line-height:1.1; font-size:clamp(28px, 4.2vw, 44px); margin:0 0 14px 0; text-shadow: 0 10px 28px rgba(0,0,0,.25)}
+  .hero .lead{color:#e9f0f7; font-size:clamp(14px, 2.1vw, 18px); max-width:56ch}
+  .gradient{background:linear-gradient(90deg,var(--brand-700),var(--brand-500)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .btn{
+    --bg:var(--brand-700); --fg:#fff; --bd:transparent;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--bg); color:var(--fg); border:1px solid var(--bd);
+    padding:12px 16px; border-radius:999px; font-weight:700; box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn:hover{transform:translateY(-1px); text-decoration:none}
+  .btn--primary{--bg:linear-gradient(135deg,var(--brand-700),var(--brand-500))}
+  .btn--outline{--bg:#fff; --fg:var(--brand-700); --bd:rgba(10,108,194,.35)}
+  .cta-row{display:flex; gap:12px; align-items:center; margin:16px 0 0; flex-wrap:wrap}
+  .hero__photo{position:relative; z-index:1; display:flex; justify-content:flex-end}
+  .hero__frame{background:#fff; padding:10px; border-radius:22px; box-shadow: 0 18px 40px rgba(12,30,52,.35)}
+  .hero__img{display:block; width:min(560px, 92vw); height:auto; border-radius:16px; object-fit:cover}
+
+  /* ===== Secciones generales ===== */
+  .section{padding:56px 0}
+  .section--alt{background:#fff}
+  .subhero{background:#fff; padding:40px 0; border-bottom:1px solid #e8eef6}
+
+  .grid{display:grid; gap:18px}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){ .grid-4{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:720px){
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .hero__container{grid-template-columns:1fr; padding:24px 0 40px}
+    .hero__photo{justify-content:flex-start}
+    .hero__img{width:100%}
+    .hero::before{background: linear-gradient(180deg, rgba(10,18,28,.65) 0%, rgba(10,18,28,.45) 40%, rgba(10,18,28,0) 90%)}
+  }
+
+  .card{background:var(--surface); border:1px solid #e6eef7; border-radius:16px; padding:18px; box-shadow: var(--shadow)}
+  .link-card{transition: transform .2s ease, box-shadow .2s ease}
+  .link-card:hover{transform: translateY(-2px)}
+  .muted{color:var(--muted)}
+  .tiny{font-size:.85rem}
+
+  .table-wrap{overflow:auto; background:#fff; border:1px solid #e6eef7; border-radius:14px; box-shadow:var(--shadow)}
+  .table{width:100%; border-collapse:collapse; min-width:720px}
+  .table th,.table td{padding:12px 14px; border-bottom:1px solid #edf2f8; text-align:left}
+  .table thead th{background:#f7fbff; font-size:.9rem; color:#304059}
+
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px}
+  .filters input,.filters select, input, textarea, select{
+    width:100%; background:#fff; border:1px solid #dce7f3; border-radius:12px; padding:10px 12px; outline:none; box-shadow:0 0 0 0 var(--ring)
+  }
+  label{display:block; font-weight:600; font-size:.95rem; color:#2a3851; margin:8px 0}
+  label input,label textarea,label select{margin-top:6px}
+
+  .site-footer{background:#0c1e34; color:#c6d4ea; margin-top:40px; padding:28px 0 16px}
+  .site-footer a{color:#e7f0ff}
+  .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:18px}
+  .copy{text-align:center; opacity:.75}
+
+  .fab-whatsapp{
+    position:fixed; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%;
+    background:linear-gradient(135deg,#25D366,#1ebe57); color:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 14px 28px rgba(41,167,68,.35); font-size:22px;
+  }
+  .fab-whatsapp:hover{transform:translateY(-2px); text-decoration:none}
+
+  .modal{position:fixed; inset:0; background:rgba(3,10,20,.55); display:none; align-items:center; justify-content:center; padding:16px}
+  .modal[aria-hidden="false"]{display:flex}
+  .modal__content{background:#fff; border-radius:16px; padding:20px; width:min(720px,95vw); box-shadow:var(--shadow)}
+  .modal__close{float:right; border:0; background:#fff; font-size:22px; cursor:pointer}
+  .alert{padding:12px 14px; border-radius:10px; margin-top:10px}
+  .success{background:#e9f9f0; color:#146c3e; border:1px solid #bfe8cf}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:8px 0}
+  .chips li{background:#eef6ff; border:1px solid #d6e9ff; padding:8px 12px; border-radius:999px}
+  .footer-grid a, .nav a{white-space:nowrap}
+
+  /* ===== Responsive header ===== */
+  @media (max-width:960px){
+    .nav{display:none}
+    .nav.open{
+      display:flex; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e6eef7;
+      padding:12px 20px; box-shadow:0 12px 30px rgba(11,31,59,.10); gap:16px; flex-direction:column; align-items:flex-start;
+    }
+    .nav a{padding:10px 0}
+    .nav a::after{bottom:0}
+    .nav-row{position:relative}
+    .nav-toggle{display:inline-flex}
+    .header-cta{display:none}
+  }
+  </style>
 </head>
 <body>
   <!-- Header / Nav -->
   <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="logo.svg" alt="Ozonix" width="36" height="36">
-      <span>Ozonix Purificación</span>
-    </a>
-    <nav id="mainNav" class="nav">
-      <a href="index.html#ozono">Ozono</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="consumibles.html">Consumibles</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html" class="btn btn--sm">Contacto</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+    <div class="wrap header-bar">
+      <a class="brand" href="#inicio">
+        <img src="logo.svg" alt="Ozonix" width="44" height="44">
+        <span>Ozonix Purificación</span>
+      </a>
+
+      <nav id="mainNav" class="nav">
+        <!-- ORDEN SEGÚN TU INDICACIÓN -->
+        <a href="#nosotros">Nosotros</a>
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#consumibles">Consumibles</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="nav-row" style="display:flex; align-items:center; gap:10px">
+        <a href="#contacto" class="header-cta">Contacto</a>
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap">
-      <h1>Purificación de agua con <span class="gradient">OZONO</span> para <em>Industria</em> e <em>Instituciones</em></h1>
-      <p class="lead">Ingeniería, instalación y mantenimiento. <strong>Importador directo</strong> de equipos y consumibles.</p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#agenda" onclick="openAgenda(event)">Agendar visita técnica</a>
-        <a class="btn btn--outline" href="https://wa.me/573000000000?text=Hola%20quiero%20asesor%C3%ADa%20en%20tratamiento%20de%20agua%20con%20ozono" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  <!-- HERO full screen -->
+  <section id="inicio" class="hero" style="--hero-bg:url('hero-bg.jpg');">
+    <div class="wrap hero__container">
+      <div class="hero__left">
+        <h1 class="hero__title">
+          Purificación de agua con <span class="gradient">OZONO</span> para <em>Industria</em> e <em>Instituciones</em>
+        </h1>
+        <!-- Texto solicitado eliminado -->
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#agenda" onclick="openAgenda(event)">Contáctanos</a>
+          <a class="btn btn--outline" href="https://wa.me/573000000000?text=Hola%20quiero%20asesor%C3%ADa%20en%20tratamiento%20de%20agua%20con%20ozono" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
-      <ul class="badges">
-        <li>Ozono como eje de tratamiento</li>
-        <li>Prueba de agua responsable</li>
-        <li>Cobertura nacional</li>
-      </ul>
+      <div class="hero__photo">
+        <div class="hero__frame">
+          <img class="hero__img" src="hero-photo.jpg" alt="Sistema de tratamiento con ozono">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -74,15 +251,15 @@
       <h2>Sectores que atendemos</h2>
       <p class="muted">Selecciona tu aplicación para ver soluciones, métodos y certificaciones.</p>
       <div class="grid grid-4">
-        <a class="card link-card" href="servicios.html#institucional">
+        <a class="card link-card" href="#institucional">
           <h3>Institucional</h3>
           <p>Bebederos, dispensadores, restaurantes, hoteles.</p>
         </a>
-        <a class="card link-card" href="servicios.html#industrial">
+        <a class="card link-card" href="#industrial">
           <h3>Industrial</h3>
           <p>Agua potable, lluvia, residual, alimentos, agro, lavandería, piscinas.</p>
         </a>
-        <a class="card link-card" href="consumibles.html">
+        <a class="card link-card" href="#consumibles">
           <h3>Consumibles</h3>
           <p>Carcazas, filtros, cloradores, repuestos.</p>
         </a>
@@ -94,35 +271,136 @@
     </div>
   </section>
 
-  <!-- Ozono -->
-  <section id="ozono" class="section section--alt">
+  <!-- Servicios y Aplicaciones -->
+  <section id="servicios" class="subhero">
     <div class="wrap">
-      <h2>Por qué <span class="gradient">ozono</span> como eje</h2>
+      <h1>Servicios y Aplicaciones</h1>
+      <p class="lead">Dividimos por sector para resolver problemas reales con <strong>ozono</strong> y filtración.</p>
+    </div>
+  </section>
+
+  <section id="institucional" class="section">
+    <div class="wrap">
+      <h2>Institucional</h2>
       <div class="grid grid-3">
-        <div class="card">
-          <h4>Oxidación potente</h4>
-          <p>Reduce carga microbiológica y compuestos orgánicos sin subproductos persistentes.</p>
-        </div>
-        <div class="card">
-          <h4>Eficiencia operativa</h4>
-          <p>Menor consumo de químicos y mejor control de olores y sabores.</p>
-        </div>
-        <div class="card">
-          <h4>Aplicaciones críticas</h4>
-          <p>Apto para alimentos, hotelería, piscinas, lavandería y reúso de agua.</p>
-        </div>
+        <div class="card"><h3>Bebederos &amp; Dispensadores</h3><p>Calidad bacteriológica, control de olores y mantenimiento programado.</p><a class="btn btn--outline" href="#contacto">Solicitar propuesta</a></div>
+        <div class="card"><h3>Restaurantes</h3><p>Lavado de frutas/verduras, hielo y agua de proceso sin sabores indeseados.</p><a class="btn btn--outline" href="#contacto">Solicitar visita</a></div>
+        <div class="card"><h3>Hoteles</h3><p>Planta integral para cocina, lavandería y spa/piscina con control microbiológico.</p><a class="btn btn--outline" href="#contacto">Agendar diagnóstico</a></div>
       </div>
     </div>
   </section>
 
-  <!-- Prueba responsable -->
-  <section id="prueba" class="section">
+  <section id="industrial" class="section section--alt">
     <div class="wrap">
-      <h2>Prueba de agua responsable</h2>
-      <p>Realizamos diagnóstico con método definido y reporte transparente. No manipulamos resultados ni usamos tácticas de “miedo”. Si se requiere, articulamos laboratorio aliado con cadena de custodia.</p>
+      <h2>Industrial</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>Agua potable / PTAP</h3><p>Clarificación, filtración, ozonización y pulido final. Datos y trazabilidad.</p></div>
+        <div class="card"><h3>Agua lluvia</h3><p>Pretratamiento + desinfección con ozono para usos no potables y reúso.</p></div>
+        <div class="card"><h3>Agua residual / PTAR</h3><p>Mejora DQO/DBO, color y olor; apoyo a desinfección sin subproductos persistentes.</p></div>
+        <div class="card"><h3>Plantas de alimentos</h3><p>Contactos sanitarios y CIP con ozono; disminuye cloro libre combinado.</p></div>
+        <div class="card"><h3>Agroindustria</h3><p>Lavado de canales y frutas; menos químicos, más inocuidad.</p></div>
+        <div class="card"><h3>Lavandería &amp; Piscinas</h3><p>Menor detergente y reposición; confort del usuario y ahorro energético.</p></div>
+      </div>
       <div class="cta-row">
-        <a class="btn btn--primary" href="#" onclick="openAgenda(event)">Agendar diagnóstico</a>
-        <a class="btn btn--ghost" href="servicios.html">Ver métodos por sector</a>
+        <a class="btn btn--primary" href="#agenda" onclick="openAgenda(event)">Agendar visita técnica</a>
+        <a class="btn btn--outline" href="#consumibles">Ver consumibles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consumibles -->
+  <section id="consumibles" class="subhero">
+    <div class="wrap">
+      <h1>Consumibles</h1>
+      <p class="lead">Carcazas, filtros y cloradores. <a class="btn btn--outline btn--sm" href="Lista-de-precios.pdf" download>Descargar lista de precios (PDF)</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filters">
+        <input id="q" placeholder="Buscar por nombre, modelo, marca…" oninput="filtrarConsumibles()">
+        <select id="cat" onchange="filtrarConsumibles()">
+          <option value="">Todas las categorías</option><option>Carcaza</option><option>Filtro</option><option>Clorador</option>
+        </select>
+        <select id="micraje" onchange="filtrarConsumibles()">
+          <option value="">Micraje</option><option>1</option><option>5</option><option>10</option><option>20</option>
+        </select>
+        <select id="marca" onchange="filtrarConsumibles()">
+          <option value="">Marca</option><option>AquaPro</option><option>Hydronix</option><option>Pentair</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table id="tablaConsumibles" class="table">
+          <thead>
+            <tr><th>Categoría</th><th>Producto</th><th>Modelo</th><th>Micras</th><th>Material</th><th>Caudal</th><th>Marca</th><th>Stock</th></tr>
+          </thead>
+          <tbody><!-- poblado por JS --></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="subhero">
+    <div class="wrap">
+      <h1>Nosotros</h1>
+      <p class="lead">Experiencia, asesoría y <strong>ozono</strong> como eje en tratamiento de agua. Importador directo.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid grid-3">
+      <div class="card"><h3>Misión</h3><p>Proveer soluciones seguras y eficientes de purificación de agua que mejoren procesos y calidad de vida.</p></div>
+      <div class="card"><h3>Visión</h3><p>Liderar la adopción del ozono en Colombia para industrias e instituciones, con impacto medible.</p></div>
+      <div class="card"><h3>Políticas &amp; Valores</h3><p>Ética, transparencia, seguridad operativa y sostenibilidad. “Prueba de agua responsable”.</p></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>Certificaciones &amp; Marcas</h2>
+      <ul class="chips"><li>NSF</li><li>ISO 9001</li><li>FDA compliant*</li><li>GRAS (ozono)</li></ul>
+      <p class="muted">*Cuando aplica por material de contacto.</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="subhero">
+    <div class="wrap">
+      <h1>Contacto</h1>
+      <p class="lead">Leonardo Castaño · Asesoría técnica e instalación</p>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <div class="wrap grid grid-2">
+      <form class="card" onsubmit="return enviarContacto(event)">
+        <h3>Escríbenos</h3>
+        <label>Nombre<input required name="nombre"></label>
+        <label>Email<input required type="email" name="email"></label>
+        <label>Teléfono<input required name="telefono"></label>
+        <label>Ciudad<input required name="ciudad"></label>
+        <label>Sector
+          <select name="sector"><option>Industrial</option><option>Institucional</option></select>
+        </label>
+        <label>Mensaje<textarea name="mensaje" rows="5" placeholder="Cuéntanos tu aplicación…"></textarea></label>
+        <div class="cta-row">
+          <button class="btn btn--primary" type="submit">Enviar</button>
+          <a class="btn btn--outline" target="_blank" rel="noopener" href="https://wa.me/573000000000?text=Hola%20Leonardo%2C%20necesito%20asesor%C3%ADa%20en%20tratamiento%20de%20agua">WhatsApp</a>
+        </div>
+        <p class="muted tiny">Al enviar aceptas nuestra política de tratamiento de datos.</p>
+        <div id="contactoOk" class="alert success" hidden>¡Gracias! Te contactaremos muy pronto.</div>
+      </form>
+
+      <div class="card">
+        <h3>Cobertura</h3>
+        <p>Atendemos <strong>Bogotá</strong>, Medellín, Cali, Barranquilla y Bucaramanga. Otras ciudades bajo cita.</p>
+        <h3 style="margin-top:1.5rem">Datos</h3>
+        <p>Email: <a href="mailto:contacto@ozonix.com">contacto@ozonix.com</a><br>
+           Tel: <a href="tel:+573000000000">+57 300 000 0000</a></p>
+        <p class="muted tiny">Para agendar una visita técnica, también puedes usar el botón en la Home o escribirnos por WhatsApp.</p>
       </div>
     </div>
   </section>
@@ -136,12 +414,12 @@
         Cobertura: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga
       </div>
       <div>
-        <a href="nosotros.html">Nosotros</a><br>
-        <a href="servicios.html">Servicios</a><br>
-        <a href="consumibles.html">Consumibles</a>
+        <a href="#nosotros">Nosotros</a><br>
+        <a href="#servicios">Servicios</a><br>
+        <a href="#consumibles">Consumibles</a>
       </div>
       <div>
-        <a href="contacto.html#form">Formulario</a><br>
+        <a href="#contacto">Formulario</a><br>
         <a href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp</a><br>
         <a href="Lista-de-precios.pdf" download>Lista de precios (PDF)</a>
       </div>
@@ -167,10 +445,7 @@
         </div>
         <label>Ciudad<input required name="ciudad" placeholder="Ciudad"/></label>
         <label>Sector
-          <select name="sector">
-            <option>Industrial</option>
-            <option>Institucional</option>
-          </select>
+          <select name="sector"><option>Industrial</option><option>Institucional</option></select>
         </label>
         <button class="btn btn--primary" type="submit">Crear cita (.ics)</button>
       </form>
@@ -178,6 +453,128 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- ====== DATA embebida para Consumibles ====== -->
+  <script type="application/json" id="consumiblesData">
+  [
+    {"categoria":"Carcaza","producto":"Carcaza Transparente 10\"","modelo":"CT10-STD","micras":0,"material":"Policarbonato","caudal":"10 L/min","marca":"AquaPro","stock":true},
+    {"categoria":"Filtro","producto":"Cartucho Sedimentos 5µ","modelo":"SED-05","micras":5,"material":"PP Meltblown","caudal":"8 L/min","marca":"Hydronix","stock":true},
+    {"categoria":"Filtro","producto":"Carbón Activado Granular","modelo":"GAC-10","micras":10,"material":"CAG","caudal":"6 L/min","marca":"Pentair","stock":false},
+    {"categoria":"Filtro","producto":"Cartucho Sedimentos 1µ","modelo":"SED-01","micras":1,"material":"PP Meltblown","caudal":"6 L/min","marca":"Hydronix","stock":true},
+    {"categoria":"Clorador","producto":"Clorador en Línea","modelo":"CL-34","micras":0,"material":"PVC/ABS","caudal":"Hasta 2 m³/h","marca":"AquaPro","stock":true}
+  ]
+  </script>
+
+  <!-- ====== SCRIPTS (embebidos) ====== -->
+  <script>
+  // Mobile nav
+  function toggleMenu(){
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('open');
+  }
+
+  // Año dinámico
+  const yEl = document.getElementById('year');
+  if (yEl) yEl.textContent = new Date().getFullYear();
+
+  // Agenda modal
+  function openAgenda(e){ if(e) e.preventDefault(); document.getElementById('agendaModal').setAttribute('aria-hidden','false'); }
+  function closeAgenda(){ document.getElementById('agendaModal').setAttribute('aria-hidden','true'); document.getElementById('agendaResult')?.setAttribute('hidden',''); }
+
+  // Crear cita ICS + WhatsApp
+  function crearCitaICS(ev){
+    ev.preventDefault();
+    const f = ev.target;
+    const nombre = f.nombre.value.trim();
+    const empresa = f.empresa?.value.trim() || '';
+    const ciudad = f.ciudad.value.trim();
+    const sector = f.sector.value;
+    const fecha = f.fecha.value;     // YYYY-MM-DD
+    const hora = f.hora.value;       // HH:MM
+    if(!fecha || !hora){ alert('Selecciona fecha y hora'); return false; }
+    const start = new Date(`${fecha}T${hora}:00`);
+    const end = new Date(start.getTime() + 60*60*1000); // 1h
+
+    function fmt(d){ return d.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z'; }
+    const ics = [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Ozonix//Agenda//ES',
+      'BEGIN:VEVENT',
+      `DTSTART:${fmt(start)}`,
+      `DTEND:${fmt(end)}`,
+      'SUMMARY:Visita técnica - Ozonix Purificación',
+      `LOCATION:${ciudad}`,
+      `DESCRIPTION:Contacto: ${nombre}${empresa? ' - '+empresa : ''}. Sector: ${sector}.`,
+      'END:VEVENT','END:VCALENDAR'
+    ].join('\r\n');
+
+    // Descargar ICS
+    const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'Visita-Ozonix.ics'; a.click();
+
+    // Mensaje para WhatsApp
+    const msg = `Hola, soy ${nombre}${empresa? ' de '+empresa : ''}. Quiero agendar una visita técnica en ${ciudad} para el sector ${sector} el ${fecha} a las ${hora}.`;
+    const wurl = `https://wa.me/573000000000?text=${encodeURIComponent(msg)}`;
+
+    const result = document.getElementById('agendaResult');
+    if(result){
+      result.innerHTML = `<p>✅ Cita creada. <a class="btn btn--outline btn--sm" target="_blank" rel="noopener" href="${wurl}">Confirmar por WhatsApp</a></p>`;
+      result.removeAttribute('hidden');
+    }
+    return false;
+  }
+
+  // Contacto (demo)
+  function enviarContacto(ev){
+    ev.preventDefault();
+    document.getElementById('contactoOk')?.removeAttribute('hidden');
+    return false;
+  }
+
+  // Consumibles (JSON embebido)
+  let _consumibles = [];
+  (function initConsumibles(){
+    try{
+      const raw = document.getElementById('consumiblesData')?.textContent || '[]';
+      _consumibles = JSON.parse(raw);
+      renderConsumibles(_consumibles);
+    }catch(e){
+      console.error('No se pudo cargar consumibles embebidos:', e);
+    }
+  })();
+
+  function renderConsumibles(items){
+    const tbody = document.querySelector('#tablaConsumibles tbody');
+    if(!tbody) return;
+    tbody.innerHTML = items.map(it => `
+      <tr>
+        <td>${it.categoria}</td>
+        <td>${it.producto}</td>
+        <td>${it.modelo}</td>
+        <td>${it.micras}</td>
+        <td>${it.material}</td>
+        <td>${it.caudal}</td>
+        <td>${it.marca}</td>
+        <td>${it.stock ? 'Disponible' : 'Agotado'}</td>
+      </tr>
+    `).join('');
+  }
+
+  function filtrarConsumibles(){
+    const q = document.getElementById('q')?.value.toLowerCase() || '';
+    const cat = document.getElementById('cat')?.value || '';
+    const mic = document.getElementById('micraje')?.value || '';
+    const marca = document.getElementById('marca')?.value || '';
+
+    const out = _consumibles.filter(x => {
+      const matchQ = !q || `${x.producto} ${x.modelo} ${x.marca}`.toLowerCase().includes(q);
+      const matchC = !cat || x.categoria === cat;
+      const matchM = !mic || String(x.micras) === mic;
+      const matchB = !marca || x.marca === marca;
+      return matchQ && matchC && matchM && matchB;
+    });
+    renderConsumibles(out);
+  }
+  </script>
 </body>
 </html>

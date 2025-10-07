@@ -8,11 +8,11 @@ function toggleMenu(){
 const yEl = document.getElementById('year');
 if (yEl) yEl.textContent = new Date().getFullYear();
 
-// Agenda modal (se mantiene para Home/Servicios)
+// Agenda modal (Home/Servicios)
 function openAgenda(e){ if(e) e.preventDefault(); document.getElementById('agendaModal').setAttribute('aria-hidden','false'); }
 function closeAgenda(){ document.getElementById('agendaModal').setAttribute('aria-hidden','true'); document.getElementById('agendaResult')?.setAttribute('hidden',''); }
 
-// Crear cita ICS + mensaje WhatsApp (se usa en Home/Servicios)
+// Crear cita ICS + mensaje WhatsApp
 function crearCitaICS(ev){
   ev.preventDefault();
   const f = ev.target;
@@ -60,7 +60,7 @@ function crearCitaICS(ev){
 function enviarContacto(ev){
   ev.preventDefault();
   document.getElementById('contactoOk')?.removeAttribute('hidden');
-  // Integrar con tu backend o servicio de formularios si deseas (Formspree, EmailJS, etc.)
+  // Integrar con backend o servicio de formularios (Formspree, EmailJS, etc.)
   return false;
 }
 
