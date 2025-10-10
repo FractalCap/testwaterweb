@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OZONO | Tratamiento y Purificación de Agua – Industrial & Institucional</title>
-  <meta name="description" content="Purificación de agua con ozono como eje central. Ingeniería, instalación y mantenimiento para sectores Industrial e Institucional. Importador directo.">
+  <meta name="description" content="Purificación de agua con ozo... para sectores Industrial e Institucional. Importador directo.">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
 
   <!-- JSON-LD: LocalBusiness + FAQ -->
@@ -40,12 +40,12 @@
     --brand-700:#0A6CC2;
     --brand-500:#19B5FE;
     --accent-500:#2ECC71;
-    --bg:#F4F8FB;
+    --bg:#F6FAFF;
     --surface:#ffffff;
     --text:#1A2634;
     --muted:#5B6B81;
     --ring:rgba(10,108,194,.25);
-    --shadow: 0 10px 25px rgba(11,31,59,.12), 0 4px 12px rgba(11,31,59,.06);
+    --shadow: 0 10px 25px rgba(11,31,59,.10), 0 4px 12px rgba(11,31,59,.06);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -80,135 +80,76 @@
     --bg:#0A4F9C; --fg:#fff; --bd:transparent;
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     padding:10px 18px; border-radius:999px; background:var(--bg); color:var(--fg);
-    font-weight:700; box-shadow: 0 8px 20px rgba(10,79,156,.25);
+    font-weight:700; box-shadow: 0 8px 20px rgba(10,79,156,.20);
   }
   .header-cta:hover{text-decoration:none; transform:translateY(-1px)}
   .nav-toggle{display:none; font-size:22px; background:none; border:0; cursor:pointer}
 
-  /* ===== HERO full screen ===== */
-  .hero{
-    --hero-bg: radial-gradient(1200px 600px at 20% -10%, rgba(25,181,254,.25), transparent),
-               linear-gradient(180deg, #ffffff, #F4F8FB 65%);
-    background: var(--hero-bg);
-    position:relative;
-    min-height:100vh;              /* full screen */
-    display:flex; align-items:center;
-    padding:0;
-    overflow:clip;
-  }
-  .hero__container{
-    position:relative;
-    width:100%;
-    display:grid; grid-template-columns: 1.2fr 1fr; gap:28px; align-items:center;
-    padding:40px 0 56px;
-  }
-  .hero::before{
-    content:""; position:absolute; inset:0;
-    background: linear-gradient(90deg, rgba(10,18,28,.60) 0%, rgba(10,18,28,.50) 42%, rgba(10,18,28,.15) 66%, rgba(10,18,28,0) 80%);
-    pointer-events:none;
-  }
-  .hero__left{position:relative; z-index:1; color:#fff; padding:24px 0}
-  .hero__title{font-weight:800; line-height:1.1; font-size:clamp(28px, 4.2vw, 44px); margin:0 0 14px 0; text-shadow: 0 10px 28px rgba(0,0,0,.25)}
-  .hero .lead{color:#e9f0f7; font-size:clamp(14px, 2.1vw, 18px); max-width:56ch}
-  .gradient{background:linear-gradient(90deg,var(--brand-700),var(--brand-500)); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .btn{
-    --bg:var(--brand-700); --fg:#fff; --bd:transparent;
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    background:var(--bg); color:var(--fg); border:1px solid var(--bd);
-    padding:12px 16px; border-radius:999px; font-weight:700; box-shadow: var(--shadow);
-    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-  }
-  .btn:hover{transform:translateY(-1px); text-decoration:none}
-  .btn--primary{--bg:linear-gradient(135deg,var(--brand-700),var(--brand-500))}
-  .btn--outline{--bg:#fff; --fg:var(--brand-700); --bd:rgba(10,108,194,.35)}
-  .cta-row{display:flex; gap:12px; align-items:center; margin:16px 0 0; flex-wrap:wrap}
-  .hero__photo{position:relative; z-index:1; display:flex; justify-content:flex-end}
-  .hero__frame{background:#fff; padding:10px; border-radius:22px; box-shadow: 0 18px 40px rgba(12,30,52,.35)}
-  .hero__img{display:block; width:min(560px, 92vw); height:auto; border-radius:16px; object-fit:cover}
+  /* ===== HERO ===== */
+  .hero{min-height:100svh; display:grid; place-items:center; background:linear-gradient(180deg,#ffffff, #F0F6FF)}
+  .hero .grid{display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:32px}
+  h1,h2,h3{color:var(--brand-900); margin:0 0 8px}
+  h1{font-size:clamp(28px,3.6vw,46px); line-height:1.12}
+  h2{font-size:clamp(22px,2.4vw,32px)}
+  p.lead{color:var(--muted); font-size:18px; margin:10px 0 20px}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px; font-weight:700; border:1px solid transparent; box-shadow:var(--shadow)}
+  .btn--primary{background:var(--brand-700); color:#fff}
+  .btn--outline{background:#fff; color:var(--brand-700); border-color:var(--brand-700)}
+  .badge{display:inline-block; background:rgba(10,108,194,.08); color:var(--brand-700); padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px}
 
-  /* ===== Secciones generales ===== */
-  .section{padding:56px 0}
+  /* ===== Sections ===== */
+  .subhero{padding:40px 0 20px; background:linear-gradient(180deg,#F6FAFF,#fff)}
+  .section{padding:48px 0}
   .section--alt{background:#fff}
-  .subhero{background:#fff; padding:40px 0; border-bottom:1px solid #e8eef6}
-
-  .grid{display:grid; gap:18px}
-  .grid-2{grid-template-columns:repeat(2,1fr)}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  .grid-4{grid-template-columns:repeat(4,1fr)}
-  @media (max-width:900px){ .grid-4{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:720px){
-    .grid-3,.grid-2{grid-template-columns:1fr}
-    .hero__container{grid-template-columns:1fr; padding:24px 0 40px}
-    .hero__photo{justify-content:flex-start}
-    .hero__img{width:100%}
-    .hero::before{background: linear-gradient(180deg, rgba(10,18,28,.65) 0%, rgba(10,18,28,.45) 40%, rgba(10,18,28,0) 90%)}
-  }
-
-  .card{background:var(--surface); border:1px solid #e6eef7; border-radius:16px; padding:18px; box-shadow: var(--shadow)}
-  .link-card{transition: transform .2s ease, box-shadow .2s ease}
-  .link-card:hover{transform: translateY(-2px)}
+  .grid{display:grid; gap:22px}
+  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .card{background:#fff; border:1px solid #eaf0f6; border-radius:16px; padding:20px; box-shadow:var(--shadow)}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; padding:0; list-style:none}
+  .chips li{background:#eef6ff; color:#0a6cc2; border:1px solid #d9ebff; padding:8px 12px; border-radius:999px; font-weight:700}
   .muted{color:var(--muted)}
-  .tiny{font-size:.85rem}
+  .table{width:100%; border-collapse:separate; border-spacing:0; background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
+  .table th,.table td{padding:14px 16px; border-bottom:1px solid #eef2f7; text-align:left}
+  .table th{font-size:13px; text-transform:uppercase; letter-spacing:.4px; color:#52627a}
+  .table tr:last-child td{border-bottom:0}
+  .table-wrap{border-radius:16px; box-shadow:var(--shadow); overflow:auto}
 
-  .table-wrap{overflow:auto; background:#fff; border:1px solid #e6eef7; border-radius:14px; box-shadow:var(--shadow)}
-  .table{width:100%; border-collapse:collapse; min-width:720px}
-  .table th,.table td{padding:12px 14px; border-bottom:1px solid #edf2f8; text-align:left}
-  .table thead th{background:#f7fbff; font-size:.9rem; color:#304059}
-
-  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px}
-  .filters input,.filters select, input, textarea, select{
-    width:100%; background:#fff; border:1px solid #dce7f3; border-radius:12px; padding:10px 12px; outline:none; box-shadow:0 0 0 0 var(--ring)
+  /* ===== Forms ===== */
+  form input, form select, form textarea{
+    width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e4eaf2; outline:0;
+    box-shadow: 0 0 0 0 var(--ring); transition: box-shadow .15s ease, border-color .15s ease; background:#fff;
   }
-  label{display:block; font-weight:600; font-size:.95rem; color:#2a3851; margin:8px 0}
-  label input,label textarea,label select{margin-top:6px}
+  form input:focus, form select:focus, form textarea:focus{ border-color:#9dcaf0; box-shadow: 0 0 0 4px var(--ring) }
+  form .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  form .actions{display:flex; gap:10px; flex-wrap:wrap}
 
-  .site-footer{background:#0c1e34; color:#c6d4ea; margin-top:40px; padding:28px 0 16px}
-  .site-footer a{color:#e7f0ff}
-  .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:18px}
-  .copy{text-align:center; opacity:.75}
+  /* ===== Footer ===== */
+  footer{padding:36px 0; color:#5b6b81; font-size:14px}
 
-  .fab-whatsapp{
-    position:fixed; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%;
-    background:linear-gradient(135deg,#25D366,#1ebe57); color:#fff; display:flex; align-items:center; justify-content:center;
-    box-shadow: 0 14px 28px rgba(41,167,68,.35); font-size:22px;
-  }
-  .fab-whatsapp:hover{transform:translateY(-2px); text-decoration:none}
+  /* ===== Animaciones reveal ===== */
+  .reveal{opacity:0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:none}
 
-  .modal{position:fixed; inset:0; background:rgba(3,10,20,.55); display:none; align-items:center; justify-content:center; padding:16px}
-  .modal[aria-hidden="false"]{display:flex}
-  .modal__content{background:#fff; border-radius:16px; padding:20px; width:min(720px,95vw); box-shadow:var(--shadow)}
-  .modal__close{float:right; border:0; background:#fff; font-size:22px; cursor:pointer}
-  .alert{padding:12px 14px; border-radius:10px; margin-top:10px}
-  .success{background:#e9f9f0; color:#146c3e; border:1px solid #bfe8cf}
-  .chips{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:8px 0}
-  .chips li{background:#eef6ff; border:1px solid #d6e9ff; padding:8px 12px; border-radius:999px}
-  .footer-grid a, .nav a{white-space:nowrap}
-
-  /* ===== Responsive header ===== */
-  @media (max-width:960px){
+  /* ===== Responsive ===== */
+  @media (max-width: 920px){
+    .hero .grid{grid-template-columns:1fr}
     .nav{display:none}
-    .nav.open{
-      display:flex; position:absolute; top:100%; left:0; right:0; background:#fff; border-top:1px solid #e6eef7;
-      padding:12px 20px; box-shadow:0 12px 30px rgba(11,31,59,.10); gap:16px; flex-direction:column; align-items:flex-start;
-    }
-    .nav a{padding:10px 0}
-    .nav a::after{bottom:0}
-    .nav-row{position:relative}
-    .nav-toggle{display:inline-flex}
-    .header-cta{display:none}
+    .nav.open{display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:10px 0}
+    .nav-toggle{display:inline-block}
   }
   </style>
 </head>
 <body>
-  <!-- Header / Nav -->
+
+  <!-- Header -->
   <header class="site-header">
     <div class="wrap header-bar">
-      <a class="brand" href="#inicio">
-        <img src="logo.svg" alt="Ozonix" width="44" height="44">
-        <span>Ozonix Purificación</span>
+      <a class="brand" href="#inicio" aria-label="Ir a inicio">
+        <img alt="Logo" src="logo.svg" />
+        <span>OZONO</span>
       </a>
 
-      <nav id="mainNav" class="nav">
+      <nav class="nav" id="mainNav">
         <!-- ORDEN SEGÚN TU INDICACIÓN -->
         <a href="#nosotros">Nosotros</a>
         <a href="#inicio" class="active">Inicio</a>
@@ -224,86 +165,24 @@
     </div>
   </header>
 
-  <!-- HERO full screen -->
-  <section id="inicio" class="hero" style="--hero-bg:url('hero-bg.jpg');">
-    <div class="wrap hero__container">
-      <div class="hero__left">
-        <h1 class="hero__title">
-          Purificación de agua con <span class="gradient">OZONO</span> para <em>Industria</em> e <em>Instituciones</em>
-        </h1>
-        <!-- Texto solicitado eliminado -->
-        <div class="cta-row">
-          <a class="btn btn--primary" href="#agenda" onclick="openAgenda(event)">Contáctanos</a>
-          <a class="btn btn--outline" href="https://wa.me/573000000000?text=Hola%20quiero%20asesor%C3%ADa%20en%20tratamiento%20de%20agua%20con%20ozono" target="_blank" rel="noopener">WhatsApp</a>
+  <!-- HERO full screen — con animaciones -->
+  <section id="inicio" class="hero">
+    <div class="wrap">
+      <div class="grid reveal">
+        <div>
+          <span class="badge">Purificación de agua con OZONO</span>
+          <h1>Para Industria e Instituciones</h1>
+          <p class="lead">Desinfección, reducción de olores/sabor y control microbiológico sin residuos químicos.</p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="#contacto" onclick="openAgenda(event)">Agendar visita técnica</a>
+            <a class="btn btn--outline" href="#consumibles">Ver consumibles</a>
+          </div>
         </div>
-      </div>
-      <div class="hero__photo">
-        <div class="hero__frame">
-          <img class="hero__img" src="hero-photo.jpg" alt="Sistema de tratamiento con ozono">
+
+        <div>
+          <img src="hero.png" alt="Sistema de ozono" style="width:100%; border-radius:16px; box-shadow:var(--shadow)" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sectores -->
-  <section class="section">
-    <div class="wrap">
-      <h2>Sectores que atendemos</h2>
-      <p class="muted">Selecciona tu aplicación para ver soluciones, métodos y certificaciones.</p>
-      <div class="grid grid-4">
-        <a class="card link-card" href="#institucional">
-          <h3>Institucional</h3>
-          <p>Bebederos, dispensadores, restaurantes, hoteles.</p>
-        </a>
-        <a class="card link-card" href="#industrial">
-          <h3>Industrial</h3>
-          <p>Agua potable, lluvia, residual, alimentos, agro, lavandería, piscinas.</p>
-        </a>
-        <a class="card link-card" href="#consumibles">
-          <h3>Consumibles</h3>
-          <p>Carcazas, filtros, cloradores, repuestos.</p>
-        </a>
-        <a class="card link-card" href="#prueba">
-          <h3>Prueba de agua responsable</h3>
-          <p>Método, límites y reporte transparente.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios y Aplicaciones -->
-  <section id="servicios" class="subhero">
-    <div class="wrap">
-      <h1>Servicios y Aplicaciones</h1>
-      <p class="lead">Dividimos por sector para resolver problemas reales con <strong>ozono</strong> y filtración.</p>
-    </div>
-  </section>
-
-  <section id="institucional" class="section">
-    <div class="wrap">
-      <h2>Institucional</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Bebederos &amp; Dispensadores</h3><p>Calidad bacteriológica, control de olores y mantenimiento programado.</p><a class="btn btn--outline" href="#contacto">Solicitar propuesta</a></div>
-        <div class="card"><h3>Restaurantes</h3><p>Lavado de frutas/verduras, hielo y agua de proceso sin sabores indeseados.</p><a class="btn btn--outline" href="#contacto">Solicitar visita</a></div>
-        <div class="card"><h3>Hoteles</h3><p>Planta integral para cocina, lavandería y spa/piscina con control microbiológico.</p><a class="btn btn--outline" href="#contacto">Agendar diagnóstico</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="industrial" class="section section--alt">
-    <div class="wrap">
-      <h2>Industrial</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Agua potable / PTAP</h3><p>Clarificación, filtración, ozonización y pulido final. Datos y trazabilidad.</p></div>
-        <div class="card"><h3>Agua lluvia</h3><p>Pretratamiento + desinfección con ozono para usos no potables y reúso.</p></div>
-        <div class="card"><h3>Agua residual / PTAR</h3><p>Mejora DQO/DBO, color y olor; apoyo a desinfección sin subproductos persistentes.</p></div>
-        <div class="card"><h3>Plantas de alimentos</h3><p>Contactos sanitarios y CIP con ozono; disminuye cloro libre combinado.</p></div>
-        <div class="card"><h3>Agroindustria</h3><p>Lavado de canales y frutas; menos químicos, más inocuidad.</p></div>
-        <div class="card"><h3>Lavandería &amp; Piscinas</h3><p>Menor detergente y reposición; confort del usuario y ahorro energético.</p></div>
-      </div>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="#agenda" onclick="openAgenda(event)">Agendar visita técnica</a>
-        <a class="btn btn--outline" href="#consumibles">Ver consumibles</a>
       </div>
     </div>
   </section>
@@ -312,32 +191,35 @@
   <section id="consumibles" class="subhero">
     <div class="wrap">
       <h1>Consumibles</h1>
-      <p class="lead">Carcazas, filtros y cloradores. <a class="btn btn--outline btn--sm" href="Lista-de-precios.pdf" download>Descargar lista de precios (PDF)</a></p>
+      <p class="lead">Carcazas, filtros y cloradores. <a class="btn btn--outline" href="lista-de-precios.pdf" download>Descargar lista de precios (PDF)</a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="filters">
-        <input id="q" placeholder="Buscar por nombre, modelo, marca…" oninput="filtrarConsumibles()">
-        <select id="cat" onchange="filtrarConsumibles()">
-          <option value="">Todas las categorías</option><option>Carcaza</option><option>Filtro</option><option>Clorador</option>
-        </select>
-        <select id="micraje" onchange="filtrarConsumibles()">
-          <option value="">Micraje</option><option>1</option><option>5</option><option>10</option><option>20</option>
-        </select>
-        <select id="marca" onchange="filtrarConsumibles()">
-          <option value="">Marca</option><option>AquaPro</option><option>Hydronix</option><option>Pentair</option>
-        </select>
-      </div>
+    </div>
+  </section>
 
-      <div class="table-wrap">
-        <table id="tablaConsumibles" class="table">
-          <thead>
-            <tr><th>Categoría</th><th>Producto</th><th>Modelo</th><th>Micras</th><th>Material</th><th>Caudal</th><th>Marca</th><th>Stock</th></tr>
-          </thead>
-          <tbody><!-- poblado por JS --></tbody>
-        </table>
+  <!-- Servicios -->
+  <section id="servicios" class="section section--alt">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <div class="grid grid-3 reveal">
+        <div class="card">
+          <h3>Diagnóstico y Diseño</h3>
+          <p>Levantamiento de información, análisis de agua y dimensionamiento.</p>
+          <a href="#contacto" class="btn btn--outline">Solicitar diagnóstico</a>
+        </div>
+        <div class="card">
+          <h3>Generación de Ozono</h3>
+          <p>Integración de equipos de ozono para procesos industriales y HORECA.</p>
+          <a href="#contacto" class="btn btn--outline">Quiero cotizar</a>
+        </div>
+        <div class="card">
+          <h3>Mantenimiento</h3>
+          <p>Planes preventivos y correctivos con recordatorios de consumibles.</p>
+          <a href="#contacto" class="btn btn--outline">Plan de mantenimiento</a>
+        </div>
       </div>
     </div>
   </section>
@@ -353,8 +235,8 @@
   <section class="section">
     <div class="wrap grid grid-3">
       <div class="card"><h3>Misión</h3><p>Proveer soluciones seguras y eficientes de purificación de agua que mejoren procesos y calidad de vida.</p></div>
-      <div class="card"><h3>Visión</h3><p>Liderar la adopción del ozono en Colombia para industrias e instituciones, con impacto medible.</p></div>
-      <div class="card"><h3>Políticas &amp; Valores</h3><p>Ética, transparencia, seguridad operativa y sostenibilidad. “Prueba de agua responsable”.</p></div>
+      <div class="card"><h3>Visión</h3><p>Liderar la adopción de ozono en tratamiento de agua para industrias e instituciones, con impacto medible.</p></div>
+      <div class="card"><h3>Políticas &amp; Valores</h3><p>Ética, cumplimiento normativo, seguridad operativa y sostenibilidad. “Prueba de agua responsable”.</p></div>
     </div>
   </section>
 
@@ -370,7 +252,7 @@
   <section id="contacto" class="subhero">
     <div class="wrap">
       <h1>Contacto</h1>
-      <p class="lead">Leonardo Castaño · Asesoría técnica e instalación</p>
+      <p class="lead">Leonardo Castaño</p>
     </div>
   </section>
 
@@ -378,97 +260,93 @@
     <div class="wrap grid grid-2">
       <form class="card" onsubmit="return enviarContacto(event)">
         <h3>Escríbenos</h3>
-        <label>Nombre<input required name="nombre"></label>
-        <label>Email<input required type="email" name="email"></label>
-        <label>Teléfono<input required name="telefono"></label>
-        <label>Ciudad<input required name="ciudad"></label>
-        <label>Sector
-          <select name="sector"><option>Industrial</option><option>Institucional</option></select>
-        </label>
-        <label>Mensaje<textarea name="mensaje" rows="5" placeholder="Cuéntanos tu aplicación…"></textarea></label>
-        <div class="cta-row">
-          <button class="btn btn--primary" type="submit">Enviar</button>
-          <a class="btn btn--outline" target="_blank" rel="noopener" href="https://wa.me/573000000000?text=Hola%20Leonardo%2C%20necesito%20asesor%C3%ADa%20en%20tratamiento%20de%20agua">WhatsApp</a>
+        <div class="row">
+          <div><label>Nombre<input name="nombre" required></label></div>
+          <div><label>Ciudad<input name="ciudad" required></label></div>
         </div>
-        <p class="muted tiny">Al enviar aceptas nuestra política de tratamiento de datos.</p>
-        <div id="contactoOk" class="alert success" hidden>¡Gracias! Te contactaremos muy pronto.</div>
+        <div class="row">
+          <div><label>Sector
+            <select name="sector">
+              <option>Industrial</option>
+              <option>Institucional</option>
+            </select>
+          </label></div>
+          <div><label>Teléfono/WhatsApp<input name="tel" required></label></div>
+        </div>
+        <label>Mensaje<textarea name="msg" rows="4"></textarea></label>
+        <div class="actions">
+          <button class="btn btn--primary" type="submit">Enviar</button>
+          <a class="btn btn--outline" href="#" onclick="openAgenda(event)">Agendar visita técnica</a>
+        </div>
+        <p id="contactoOk" hidden>✅ Gracias. Te contactaremos muy pronto.</p>
       </form>
 
       <div class="card">
-        <h3>Cobertura</h3>
-        <p>Atendemos <strong>Bogotá</strong>, Medellín, Cali, Barranquilla y Bucaramanga. Otras ciudades bajo cita.</p>
-        <h3 style="margin-top:1.5rem">Datos</h3>
-        <p>Email: <a href="mailto:contacto@ozonix.com">contacto@ozonix.com</a><br>
-           Tel: <a href="tel:+573000000000">+57 300 000 0000</a></p>
-        <p class="muted tiny">Para agendar una visita técnica, también puedes usar el botón en la Home o escribirnos por WhatsApp.</p>
+        <h3>Agenda rápida</h3>
+        <form onsubmit="return crearCitaICS(event)">
+          <div class="row">
+            <div><label>Nombre<input name="nombre" required></label></div>
+            <div><label>Empresa (opcional)<input name="empresa"></label></div>
+          </div>
+          <div class="row">
+            <div><label>Ciudad<input name="ciudad" required></label></div>
+            <div><label>Sector
+              <select name="sector">
+                <option>Industrial</option>
+                <option>Institucional</option>
+              </select>
+            </label></div>
+          </div>
+          <div class="row">
+            <div><label>Fecha<input type="date" name="fecha" required></label></div>
+            <div><label>Hora<input type="time" name="hora" required></label></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn--primary" type="submit">Crear cita</button>
+          </div>
+          <p id="agendaResult" hidden></p>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <strong>Ozonix Purificación</strong><br>
-        Importador directo · Bogotá, Colombia<br>
-        Cobertura: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga
-      </div>
-      <div>
-        <a href="#nosotros">Nosotros</a><br>
-        <a href="#servicios">Servicios</a><br>
-        <a href="#consumibles">Consumibles</a>
-      </div>
-      <div>
-        <a href="#contacto">Formulario</a><br>
-        <a href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp</a><br>
-        <a href="Lista-de-precios.pdf" download>Lista de precios (PDF)</a>
-      </div>
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year">2025</span> Ozonix Purificación · Todos los derechos reservados</p>
     </div>
-    <p class="copy">© <span id="year"></span> Ozonix Purificación</p>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a class="fab-whatsapp" href="https://wa.me/573000000000?text=Hola%20quiero%20asesor%C3%ADa%20en%20tratamiento%20de%20agua" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-
-  <!-- Agenda modal -->
-  <div id="agendaModal" class="modal" aria-hidden="true" role="dialog">
-    <div class="modal__content">
-      <button class="modal__close" onclick="closeAgenda()">×</button>
-      <h3>Agendar visita técnica</h3>
-      <p class="muted">Selecciona fecha y hora; generaremos un archivo de calendario (.ics) y mensaje para WhatsApp.</p>
-      <form id="agendaForm" onsubmit="return crearCitaICS(event)">
-        <div class="grid grid-2">
-          <label>Nombre<input required name="nombre" placeholder="Tu nombre"/></label>
-          <label>Empresa<input name="empresa" placeholder="Empresa (opcional)"/></label>
-          <label>Fecha<input required type="date" name="fecha"/></label>
-          <label>Hora<input required type="time" name="hora"/></label>
+  <!-- Modal Agenda -->
+  <dialog id="agendaModal" aria-hidden="true" style="border:0; border-radius:16px; padding:0; box-shadow:var(--shadow); max-width:720px; width:96%">
+    <div class="wrap" style="padding:20px">
+      <h3>Agenda una visita</h3>
+      <p class="muted">Cuéntanos tu ciudad, sector y disponibilidad.</p>
+      <form onsubmit="return crearCitaICS(event)">
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+          <div><label>Nombre<input name="nombre" required></label></div>
+          <div><label>Empresa (opcional)<input name="empresa"></label></div>
+          <div><label>Ciudad<input name="ciudad" required></label></div>
+          <div><label>Sector
+            <select name="sector"><option>Industrial</option><option>Institucional</option></select>
+          </label></div>
+          <div><label>Fecha<input type="date" name="fecha" required></label></div>
+          <div><label>Hora<input type="time" name="hora" required></label></div>
         </div>
-        <label>Ciudad<input required name="ciudad" placeholder="Ciudad"/></label>
-        <label>Sector
-          <select name="sector"><option>Industrial</option><option>Institucional</option></select>
-        </label>
-        <button class="btn btn--primary" type="submit">Crear cita (.ics)</button>
+        <div class="actions" style="margin-top:12px">
+          <button class="btn btn--primary" type="submit">Crear cita</button>
+          <button class="btn btn--outline" type="button" onclick="closeAgenda()">Cerrar</button>
+        </div>
+        <p id="agendaResult" hidden></p>
       </form>
-      <div id="agendaResult" class="agenda-result" hidden></div>
     </div>
-  </div>
-
-  <!-- ====== DATA embebida para Consumibles ====== -->
-  <script type="application/json" id="consumiblesData">
-  [
-    {"categoria":"Carcaza","producto":"Carcaza Transparente 10\"","modelo":"CT10-STD","micras":0,"material":"Policarbonato","caudal":"10 L/min","marca":"AquaPro","stock":true},
-    {"categoria":"Filtro","producto":"Cartucho Sedimentos 5µ","modelo":"SED-05","micras":5,"material":"PP Meltblown","caudal":"8 L/min","marca":"Hydronix","stock":true},
-    {"categoria":"Filtro","producto":"Carbón Activado Granular","modelo":"GAC-10","micras":10,"material":"CAG","caudal":"6 L/min","marca":"Pentair","stock":false},
-    {"categoria":"Filtro","producto":"Cartucho Sedimentos 1µ","modelo":"SED-01","micras":1,"material":"PP Meltblown","caudal":"6 L/min","marca":"Hydronix","stock":true},
-    {"categoria":"Clorador","producto":"Clorador en Línea","modelo":"CL-34","micras":0,"material":"PVC/ABS","caudal":"Hasta 2 m³/h","marca":"AquaPro","stock":true}
-  ]
-  </script>
+  </dialog>
 
   <!-- ====== SCRIPTS (embebidos) ====== -->
   <script>
   // Mobile nav
   function toggleMenu(){
-    const nav = document.getElementById('mainNav');
+    const nav = document.getElementById('mainNav') || document.querySelector('.nav');
     nav.classList.toggle('open');
   }
 
@@ -476,11 +354,11 @@
   const yEl = document.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
 
-  // Agenda modal
+  // Agenda modal (Home/Servicios)
   function openAgenda(e){ if(e) e.preventDefault(); document.getElementById('agendaModal').setAttribute('aria-hidden','false'); }
   function closeAgenda(){ document.getElementById('agendaModal').setAttribute('aria-hidden','true'); document.getElementById('agendaResult')?.setAttribute('hidden',''); }
 
-  // Crear cita ICS + WhatsApp
+  // Crear cita ICS + mensaje WhatsApp
   function crearCitaICS(ev){
     ev.preventDefault();
     const f = ev.target;
@@ -488,8 +366,8 @@
     const empresa = f.empresa?.value.trim() || '';
     const ciudad = f.ciudad.value.trim();
     const sector = f.sector.value;
-    const fecha = f.fecha.value;     // YYYY-MM-DD
-    const hora = f.hora.value;       // HH:MM
+    const fecha = f.fecha.value;
+    const hora = f.hora.value;
     if(!fecha || !hora){ alert('Selecciona fecha y hora'); return false; }
     const start = new Date(`${fecha}T${hora}:00`);
     const end = new Date(start.getTime() + 60*60*1000); // 1h
@@ -510,71 +388,34 @@
     const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = 'Visita-Ozonix.ics'; a.click();
+    a.href = url; a.download = 'visita-tecnica.ics'; a.click();
 
-    // Mensaje para WhatsApp
-    const msg = `Hola, soy ${nombre}${empresa? ' de '+empresa : ''}. Quiero agendar una visita técnica en ${ciudad} para el sector ${sector} el ${fecha} a las ${hora}.`;
+    // WhatsApp
+    const msg = `Hola, soy ${nombre}${empresa? ' de '+empresa : ''}. Me gustaría agendar una visita técnica en ${ciudad} para el sector ${sector} el ${fecha} a las ${hora}.`;
     const wurl = `https://wa.me/573000000000?text=${encodeURIComponent(msg)}`;
 
     const result = document.getElementById('agendaResult');
     if(result){
-      result.innerHTML = `<p>✅ Cita creada. <a class="btn btn--outline btn--sm" target="_blank" rel="noopener" href="${wurl}">Confirmar por WhatsApp</a></p>`;
+      result.innerHTML = `<p>✅ Cita creada. <a class="btn btn--outline" target="_blank" rel="noopener" href="${wurl}">Confirmar por WhatsApp</a></p>`;
       result.removeAttribute('hidden');
     }
     return false;
   }
 
-  // Contacto (demo)
+  // Contacto (demo local)
   function enviarContacto(ev){
     ev.preventDefault();
     document.getElementById('contactoOk')?.removeAttribute('hidden');
     return false;
   }
 
-  // Consumibles (JSON embebido)
-  let _consumibles = [];
-  (function initConsumibles(){
-    try{
-      const raw = document.getElementById('consumiblesData')?.textContent || '[]';
-      _consumibles = JSON.parse(raw);
-      renderConsumibles(_consumibles);
-    }catch(e){
-      console.error('No se pudo cargar consumibles embebidos:', e);
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
     }
-  })();
-
-  function renderConsumibles(items){
-    const tbody = document.querySelector('#tablaConsumibles tbody');
-    if(!tbody) return;
-    tbody.innerHTML = items.map(it => `
-      <tr>
-        <td>${it.categoria}</td>
-        <td>${it.producto}</td>
-        <td>${it.modelo}</td>
-        <td>${it.micras}</td>
-        <td>${it.material}</td>
-        <td>${it.caudal}</td>
-        <td>${it.marca}</td>
-        <td>${it.stock ? 'Disponible' : 'Agotado'}</td>
-      </tr>
-    `).join('');
-  }
-
-  function filtrarConsumibles(){
-    const q = document.getElementById('q')?.value.toLowerCase() || '';
-    const cat = document.getElementById('cat')?.value || '';
-    const mic = document.getElementById('micraje')?.value || '';
-    const marca = document.getElementById('marca')?.value || '';
-
-    const out = _consumibles.filter(x => {
-      const matchQ = !q || `${x.producto} ${x.modelo} ${x.marca}`.toLowerCase().includes(q);
-      const matchC = !cat || x.categoria === cat;
-      const matchM = !mic || String(x.micras) === mic;
-      const matchB = !marca || x.marca === marca;
-      return matchQ && matchC && matchM && matchB;
-    });
-    renderConsumibles(out);
-  }
+  }, {threshold:.15});
+  for(const el of document.querySelectorAll('.reveal')) io.observe(el);
   </script>
 </body>
 </html>
